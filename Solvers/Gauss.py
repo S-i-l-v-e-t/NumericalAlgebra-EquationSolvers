@@ -1,10 +1,10 @@
 from typing import Any
 from torch import Tensor
 import torch
-from __genericSolver import Solver
+from Solvers.__genericSolver import Solver
 
 class GaussSolver(Solver):
-    def __init__(self, device, *args: Any, **kwds: Any) -> None:
+    def __init__(self, device=None, *args: Any, **kwds: Any) -> None:
         super().__init__(device, *args, **kwds)
     def _solve(self, mat: Tensor) -> Tensor:
         n = mat.shape[0]

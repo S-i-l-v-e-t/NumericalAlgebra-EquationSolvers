@@ -1,10 +1,10 @@
 from typing import Any
-from __genericSolver import Solver
+from Solvers.__genericSolver import Solver
 from torch import Tensor
 import torch
 
 class CholeskySolver(Solver):
-    def __init__(self, device, *args: Any, **kwds: Any) -> None:
+    def __init__(self, device=None, *args: Any, **kwds: Any) -> None:
         super().__init__(device, *args, **kwds)
     def _solve(self, mat: Tensor) -> Tensor:
         matA = mat[:,:-1]

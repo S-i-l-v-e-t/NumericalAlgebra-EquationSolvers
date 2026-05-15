@@ -1,10 +1,10 @@
 from typing import Any
 from torch import Tensor
 import torch
-from __genericSolver import Solver
+from Solvers.__genericSolver import Solver
 
 class GaussSeidelSolver(Solver):
-    def __init__(self, device, max_iter : int = 1000, tol : float = 1e-6, omega : float = 1.00, *args: Any, **kwds: Any) -> None:
+    def __init__(self, device=None, max_iter : int = 1000, tol : float = 1e-6, omega : float = 1.00, *args: Any, **kwds: Any) -> None:
         super().__init__(device, *args, **kwds)
         self.tol = tol
         self.max_iter = max_iter
